@@ -1,0 +1,415 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-error":"#ffffff","on-surface":"#1c1c19","tertiary":"#251700","outline":"#727972","surface-tint":"#466550","on-surface-variant":"#424843","on-tertiary":"#ffffff","primary-fixed-dim":"#adcfb5","on-primary-container":"#7d9d86","secondary":"#974727","secondary-container":"#ff9972","on-tertiary-fixed":"#281900","surface-container-highest":"#e6e2dd","primary":"#011f0e","on-tertiary-fixed-variant":"#5c4215","outline-variant":"#c2c8c1","on-primary-fixed":"#022110","primary-container":"#163422","tertiary-container":"#402a00","surface-container":"#f1ede8","surface-container-high":"#ebe8e3","surface-bright":"#fdf9f4","surface-variant":"#e6e2dd","on-primary":"#ffffff","on-primary-fixed-variant":"#2f4d39","on-secondary-container":"#772f11","on-secondary":"#ffffff","on-error-container":"#93000a","inverse-on-surface":"#f4f0eb","error":"#ba1a1a","inverse-surface":"#31302d","on-background":"#1c1c19","surface-dim":"#ddd9d5","on-tertiary-container":"#b2915c","tertiary-fixed-dim":"#e6c188","secondary-fixed":"#ffdbcf","surface-container-low":"#f7f3ee","tertiary-fixed":"#ffdead","inverse-primary":"#adcfb5","error-container":"#ffdad6","on-secondary-fixed":"#380d00","background":"#fdf9f4","secondary-fixed-dim":"#ffb59a","surface":"#fdf9f4","surface-container-lowest":"#ffffff","primary-fixed":"#c8ebd0","on-secondary-fixed-variant":"#793012"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter":"24px","unit":"8px","section-padding":"120px","margin-desktop":"64px","margin-mobile":"16px"},fontFamily:{"display-lg":["Libre Caslon Text"],"body-lg":["Work Sans"],"headline-lg-mobile":["Libre Caslon Text"],"body-md":["Work Sans"],"label-sm":["Work Sans"],"headline-lg":["Libre Caslon Text"],"headline-md":["Libre Caslon Text"]},fontSize:{"display-lg":["48px",{"lineHeight":"1.1","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"1.6","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"1.2","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"1.6","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"1.4","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"1.2","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"1.3","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><a class="flex items-center gap-3" data-path="home" href="#"><div class="flex flex-col"><span class="font-headline-md text-headline-md text-primary tracking-tight">Jain Desi &amp; Pure</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Heritage Farmed Purity</span></div></a><nav class="hidden lg:flex items-center gap-8 h-full" data-active-classes="text-secondary border-b-2 border-secondary font-semibold"><a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="our-story" href="#">Our Story</a><a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="our-products" href="#">Our Products</a><a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors py-2" data-path="certifications" href="#">Certifications</a><a aria-current="page" class="uppercase transition-colors py-2 text-secondary border-b-2 border-secondary font-semibold" data-path="our-partners" href="#">Our Partners</a></nav><div class="flex items-center gap-4"><button aria-label="Search" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><a aria-label="User Account" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="user-account" href="#"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></a><a class="inline-flex items-center gap-2 bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-5 py-2.5 rounded-lg hover:bg-primary transition-colors shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-path="cart" href="#"><span class="material-symbols-outlined text-[18px]">shopping_bag</span><span>Cart</span></a></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Navigation State Highlighter Script -->
+<script>
+    (function () {
+      const activeLink = document.querySelector('nav a[data-path="our-partners"]');
+      if (activeLink) {
+        activeLink.classList.add('text-secondary', 'border-b-2', 'border-secondary', 'font-semibold');
+        activeLink.classList.remove('text-on-surface-variant');
+      }
+    })();
+  </script>
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden bg-surface-container-low pb-20 pt-8 lg:pt-14 lg:pb-28">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Eyebrow & Editorial Header -->
+<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container text-secondary mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Community &amp; Traceability</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mb-6">
+          Grown with Reverence,<br class="hidden sm:inline">Harvested with Integrity
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          We partner directly with smallholder farming families, traditional cold-press artisans, and heritage grain growers across India. By cutting out middlemen, we guarantee fair incomes and pure, unadulterated food.
+        </p>
+</div>
+<!-- Hero Panoramic Feature Frame -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-xl bg-surface-container-highest">
+<div class="aspect-[16/9] lg:aspect-[21/9] w-full relative">
+<img alt="Authentic traditional Indian organic farmers in a golden mustard and wheat field at warm sunrise, smiling warmly together with harvested organic grains" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApAQSH60EsAobB_gqeW_biyC6D6H6zjVr-O1X_xkrbd5P9Zl-HCKeUMCZ20ydz-uox9jYqsXjvN7dTCA8SbsSNIux9m8rBijtgQjv0cauv0JqAYCedtW6pqwU8xOKekraQDvTJRUC4Lk3jHTbdpundOLeGucSqNMAnTEJEm871Fo6dy-_mJye5FVk9w6B2xU81WUivTUFP8NpkRn7xjMVEqq1uWQanI4z0Ndu6p42g5Vos7AXKHsdY">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 lg:bottom-10 lg:left-12 lg:right-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4 text-on-primary">
+<div class="max-w-xl">
+<span class="inline-flex items-center gap-1.5 text-secondary-fixed text-xs tracking-wider uppercase font-label-sm font-semibold mb-2">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span> Shekhawati &amp; Malwa Valleys
+              </span>
+<p class="font-headline-md text-headline-md text-on-primary font-medium tracking-normal">
+                Generational Guardians of Traditional Soil &amp; Seed
+              </p>
+</div>
+<div class="bg-primary-container/85 backdrop-blur-md px-5 py-3 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed-dim">Harvest Protocol</span>
+<span class="font-body-md text-body-md text-on-primary font-medium">100% Non-GMO &amp; Traceable</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Impact Metrics Bar -->
+<div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+<div class="bg-surface p-6 lg:p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Network</span>
+<span class="material-symbols-outlined text-primary text-[24px]">handshake</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-1">1,400+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">Partner Farmers Across 8 Clusters</div>
+</div>
+</div>
+<div class="bg-surface p-6 lg:p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Fair Trade</span>
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-1">100%</div>
+<div class="font-body-md text-body-md text-on-surface-variant">Direct Fair Compensation Pre-Harvest</div>
+</div>
+</div>
+<div class="bg-surface p-6 lg:p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Cooperatives</span>
+<span class="material-symbols-outlined text-primary text-[24px]">hub</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-1">8 Guilds</div>
+<div class="font-body-md text-body-md text-on-surface-variant">Active Across Rajasthan, MP &amp; Punjab</div>
+</div>
+</div>
+<div class="bg-surface p-6 lg:p-8 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Soil Standard</span>
+<span class="material-symbols-outlined text-primary text-[24px]">spa</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-1">0 Synthetic</div>
+<div class="font-body-md text-body-md text-on-surface-variant">Chemical Pesticides &amp; Artificial Inputs</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Partner Spotlights -->
+<section class="w-full py-24 lg:py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-24 lg:space-y-32">
+<!-- Section Title Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-3 font-semibold">Living Partnerships</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Voices from the Grove &amp; Hearth</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Behind every jar of oil and sack of heritage spice is a living relationship. Meet the master craftsmen and multi-generational farmers preserving our indigenous seedlines.
+        </p>
+</div>
+<!-- Partner 1: The Shekhawati Spice Collective -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+<!-- Image with organic frame styling -->
+<div class="lg:col-span-6 relative">
+<div class="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] bg-surface-container">
+<img alt="Artisanal Indian spice farming cooperative in Rajasthan hand-sorting harvested sun-dried turmeric rhizomes and red chillies on clean woven mats in a sunlit village courtyard" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7GsGynMOUwTM8hQVCqkwRyItB0SD923bXxHbC6flrvnWMMZSMXjuLONjI8rChf4NQjC-P1OZSaXgTgaHYmMdOGmFCQ8hvvpuo43gCW2stullABO76K8meQOq5bDWElD7hMG2z3Zazxce2mjZb4ADJL8YpcQsxVwxb6HUKJKPyk0JByL5PW-6WWUomc_u5HMrQDtg3gKGMZRampWzVT49f4S0de5rFdz78AczS_-ngH7c8Iv3dmbto">
+</div>
+<!-- Floating Credential Card -->
+<div class="absolute -bottom-6 -right-4 sm:bottom-6 sm:-right-6 bg-surface-container-lowest p-5 rounded-xl shadow-lg max-w-[240px]">
+<div class="flex items-center gap-2 text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Origin Verified</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-medium">Salem Curcumin &gt; 5.2% Certified Natural</p>
+</div>
+</div>
+<!-- Content -->
+<div class="lg:col-span-6 flex flex-col items-start lg:pl-4">
+<div class="flex items-center gap-2 px-3 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Shekhawati Region, Rajasthan</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">
+            The Shekhawati Spice Collective
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Spanning three desert-fringe villages in Rajasthan, this 340-family guild focuses on drought-hardy, traditional seed varieties. Heirloom Salem Turmeric and fiery Mathania Chillies are carefully harvested at peak morning dew and sun-dried on elevated, unbleached cotton charpais to prevent soil contamination.
+          </p>
+<!-- Quote Block -->
+<div class="bg-surface-container-low p-6 rounded-xl mb-6 w-full">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-secondary text-[28px] shrink-0">format_quote</span>
+<div>
+<p class="font-display-lg text-[19px] italic text-primary leading-relaxed mb-3">
+                  “Our soil hasn't seen synthetic chemical sprays in over two decades. For our elders and children, purity is not commerce; it is our sacred seva.”
+                </p>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Ramdas Ji</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Lead Elder, Shekhawati Organic Guild</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Crop Tags -->
+<div class="w-full">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-3 font-semibold">Staple Heritage Crops</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Salem Curcumin Turmeric</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Mathania Red Chilli</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Unpolished Nagori Cumin</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Native Desi Fenugreek</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Partner 2: Malwa Lakdi Ghani Guild -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+<!-- Content First on Desktop -->
+<div class="lg:col-span-6 flex flex-col items-start lg:pr-4 order-2 lg:order-1">
+<div class="flex items-center gap-2 px-3 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+<span>Ujjain &amp; Nimar Valley, Madhya Pradesh</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">
+            Malwa Lakdi Ghani Guild
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+            Preserving the ancient artisanal lineage of cold wood extraction, the Malwa Guild uses dense neem and babool wooden pestles operating at under 14 RPM. By ensuring pressing temperatures never exceed 38°C, native antioxidants, essential fatty acids, and the raw pungent aroma are captured without solvent chemicals or steam refining.
+          </p>
+<!-- Key Craft Standards Bento -->
+<div class="grid grid-cols-2 gap-4 w-full mb-6">
+<div class="p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2 text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">thermostat</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Cold Pressing</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold">&lt; 38°C Native Temperature</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-1">Preserves live enzymes and tocopherols</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2 text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">filter_vintage</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">Extraction Base</span>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold">Aged Babool Wood</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs mt-1">Zero metal heat transfer or friction burn</p>
+</div>
+</div>
+<!-- Product Tags -->
+<div class="w-full">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-3 font-semibold">Guild Pure Extractions</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Wood-Pressed Yellow Mustard Oil</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Raw Virgin Groundnut Oil</span>
+<span class="px-3.5 py-1.5 rounded-lg bg-surface-container-high text-primary font-body-md text-body-md text-sm font-medium">Cold-Extracted Black Flaxseed</span>
+</div>
+</div>
+</div>
+<!-- Image -->
+<div class="lg:col-span-6 relative order-1 lg:order-2">
+<div class="relative overflow-hidden rounded-2xl shadow-xl aspect-[4/3] bg-surface-container">
+<img alt="Traditional artisan oil presser operating a traditional wooden cold-press ghani (Lakdi Ghani) in a clean rustic sunlit workshop with fresh golden mustard oil flowing" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Z-pQCn2mGrBeqbSTjUZL4XPwhjPxMk95oP992Dlhmr9tf9PeAeA2-v1aUI5wjCYI5roJczVEfhWxCuMbVjjXMGClM6UpuMPyf73Bcku9UvhKgtAFXktJodAy59KalApfNmhNQ7rQCXvo40GIBPGfS6awR3XvKolOxu2C92yXaeqj9KvVO2LNl_lp1Y2wIavfSRwFB6Onrm6o1mbj46oygRvryvw7c6__MG2x9p3U_OAG9uFR8g2-">
+</div>
+<!-- Artisanal Seal -->
+<div class="absolute -bottom-6 -left-4 sm:bottom-6 sm:-left-6 bg-surface-container-lowest p-5 rounded-xl shadow-lg max-w-[240px]">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Zero Refinement</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Sediment settled naturally through cotton muslin over 72 hours.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Fair Partnership Pledge -->
+<section class="w-full py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Section Header -->
+<div class="max-w-3xl mx-auto text-center mb-16">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-3 font-semibold">Integrity By Design</span>
+<h2 class="font-display-lg text-headline-lg text-primary mb-6">The Fair Partnership Pledge</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Purity in the kitchen begins with dignity in the fields. We have structured our cooperative agreements around three immutable principles.
+        </p>
+</div>
+<!-- 3 Pillar Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface p-8 lg:p-10 rounded-2xl shadow-sm flex flex-col justify-between h-full transition-transform hover:-translate-y-1">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-6">
+<span class="material-symbols-outlined text-[28px]">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">
+              Fair &amp; Guaranteed Pricing
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Smallholders shouldn't gamble on volatile middleman markets. We commit to contracts offering 25% to 35% above Mandi benchmark rates, disbursed directly to farmers' bank accounts prior to sowing season.
+            </p>
+</div>
+<div class="pt-6 border-t border-surface-container-high flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Zero Pre-harvest Debt Trap</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface p-8 lg:p-10 rounded-2xl shadow-sm flex flex-col justify-between h-full transition-transform hover:-translate-y-1">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-6">
+<span class="material-symbols-outlined text-[28px]">eco</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">
+              Chemical-Free Stewardship
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Transitioning depleted soils to zero-chemical fertility requires support. We sponsor independent multi-stage soil and leaf microbial tests, distributing indigenous heirloom seeds and organic Jeevamrit culture freely.
+            </p>
+</div>
+<div class="pt-6 border-t border-surface-container-high flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>NABL Accredited Testing</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface p-8 lg:p-10 rounded-2xl shadow-sm flex flex-col justify-between h-full transition-transform hover:-translate-y-1">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-6">
+<span class="material-symbols-outlined text-[28px]">domain_add</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">
+              Decentralized Heritage Units
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+              Instead of centralizing processing in industrialized factories, we finance and construct village-level cold-press and slow stone-milling micro-units. The value-addition stays in the rural villages where women lead operations.
+            </p>
+</div>
+<div class="pt-6 border-t border-surface-container-high flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Rural Value Retention</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Traceability & Harvest Transparency -->
+<section class="w-full py-20 lg:py-28 bg-primary text-on-primary relative overflow-hidden">
+<!-- Ambient organic gradient background -->
+<div class="absolute -right-48 -bottom-48 w-96 h-96 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-32 -top-32 w-80 h-80 rounded-full bg-surface-tint/10 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Text & Search Tool -->
+<div class="lg:col-span-7">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-primary-fixed-dim font-label-sm text-label-sm uppercase tracking-widest mb-6">
+<span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+<span>Farm-to-Pantry Transparency</span>
+</div>
+<h2 class="font-display-lg text-headline-lg text-on-primary mb-6">
+            Know Exactly Who Grew Your Food
+          </h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim max-w-xl mb-8 leading-relaxed">
+            Every Jain Desi &amp; Pure batch features a unique harvest origin code on the back seal. Enter your batch code below to view soil test reports, harvest geo-coordinates, and artisan press dates.
+          </p>
+<!-- Interactive Batch Lookup Micro-App -->
+<div class="bg-surface-container-lowest p-2 sm:p-2.5 rounded-xl shadow-lg max-w-lg mb-8 flex flex-col sm:flex-row gap-2">
+<div class="flex-1 flex items-center gap-3 px-3 py-2">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-transparent text-on-surface placeholder:text-outline focus:outline-none font-body-md text-body-md" id="batchInput" placeholder="Try Batch #JDP-RAJ-884" type="text">
+</div>
+<button class="px-6 py-3 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold hover:bg-on-secondary-container transition-colors shrink-0" id="lookupBtn" type="button">
+              Verify Origin
+            </button>
+</div>
+<!-- Dynamic Verification Result Preview Container -->
+<div class="hidden max-w-lg p-5 rounded-xl bg-primary-container text-on-primary mb-6" id="lookupResult">
+<div class="flex items-start justify-between mb-3">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-secondary-container font-semibold tracking-wider">Verified Soil Batch</span>
+<h4 class="font-headline-md text-[20px] text-on-primary mt-1">Salem Turmeric Lot #884</h4>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+</div>
+<div class="space-y-1 text-sm font-body-md text-primary-fixed-dim">
+<p><strong class="text-on-primary">Grower:</strong> Ramdas Ji Collective (Village Nawalgarh, Rajasthan)</p>
+<p><strong class="text-on-primary">Tested Curcumin:</strong> 5.34% (Standard: 3.0%) • Zero Heavy Metals</p>
+<p><strong class="text-on-primary">Milled Date:</strong> Nov 14, 2024 via Vedic Stone Mill</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-primary-fixed-dim text-sm font-body-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">verified</span>
+<span>100% Lab Pesticide Residual Clearance</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container text-[18px]">event_available</span>
+<span>Direct Farm Visits Welcomed</span>
+</div>
+</div>
+</div>
+<!-- Farm Harvest Visit Callout Card -->
+<div class="lg:col-span-5">
+<div class="bg-primary-container p-8 lg:p-10 rounded-2xl shadow-xl flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container block mb-3 font-semibold">Open Door Philosophy</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-4">
+                Walk the Fields with Our Farmers
+              </h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed mb-8">
+                From November to February, we host intimate community visits to our partner groves during the winter mustard blossom and turmeric sorting. Experience traditional wooden press extraction first-hand.
+              </p>
+<!-- Seasonal Highlights -->
+<div class="space-y-3 mb-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">agriculture</span>
+<span class="font-body-md text-body-md text-on-primary">Traditional Lakdi Ghani demonstration</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">restaurant</span>
+<span class="font-body-md text-body-md text-on-primary">Sāttvic communal farmer lunch on the groves</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary-container text-[20px]">description</span>
+<span class="font-body-md text-body-md text-on-primary">Direct review of field soil health journals</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold hover:bg-surface-container-high transition-colors text-center" href="#">
+<span>Plan a Farm Visit</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-high/10 text-on-primary font-label-sm text-label-sm uppercase tracking-wider hover:bg-surface-container-high/20 transition-colors text-center" href="#">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Audit &amp; Lab Summary</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Search Input Script -->
+<script>
+    (function() {
+      const input = document.getElementById('batchInput');
+      const btn = document.getElementById('lookupBtn');
+      const result = document.getElementById('lookupResult');
+
+      function triggerLookup() {
+        if (!input || !result) return;
+        result.classList.remove('hidden');
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      if (btn) btn.addEventListener('click', triggerLookup);
+      if (input) {
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') triggerLookup();
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-high text-on-surface pt-16 pb-12"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16"><div class="lg:col-span-2 flex flex-col items-start pr-0 lg:pr-8"><a class="mb-3" data-path="home" href="#"><span class="font-headline-md text-headline-md text-primary tracking-tight">Jain Desi &amp; Pure</span></a><p class="font-body-md text-body-md text-on-surface-variant mb-6 max-w-md">Honoring heritage, harvesting purity. We preserve timeless Indian agriculture traditions—bringing authentic wood-pressed oils, native Vedic grains, and stone-ground spices directly from family groves to your table.</p><div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px]">verified</span><span>100% Traditional &amp; Lab Certified Pure</span></div></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-primary mb-4 font-bold">Explore</h4><ul class="space-y-3"><nav class="flex flex-col space-y-3" data-active-classes="text-secondary font-semibold"><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="our-products" href="#">Our Products</a></li><li><a aria-current="page" class="transition-colors text-secondary font-semibold" data-path="our-partners" href="#">Our Partners</a></li><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="certifications" href="#">Quality &amp; Certifications</a></li></nav></ul></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-primary mb-4 font-bold">Heritage</h4><ul class="space-y-3"><nav class="flex flex-col space-y-3" data-active-classes="text-secondary font-semibold"><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="wood-pressing" href="#">Wood-Pressing</a></li><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="stone-grinding" href="#">Stone-Grinding</a></li><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="fair-sourcing" href="#">Fair Sourcing</a></li></nav></ul></div><div><h4 class="font-label-sm text-label-sm uppercase tracking-wider text-primary mb-4 font-bold">Legal &amp; Connect</h4><ul class="space-y-3 mb-6"><nav class="flex flex-col space-y-3" data-active-classes="text-secondary font-semibold"><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy-policy" href="#">Privacy Policy</a></li><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms-of-service" href="#">Terms of Service</a></li><li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="shipping-policy" href="#">Shipping Policy</a></li></nav></ul><div class="space-y-2 text-on-surface-variant font-body-md text-body-md"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">mail</span><span>care@jaindesipure.com</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">call</span><span>+91 (0) 800 456 7890</span></div></div></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-on-surface-variant font-label-sm text-label-sm"><p>© 2024 Jain Desi &amp; Pure. All rights reserved. Crafted with patience and traditional reverence.</p><div class="flex items-center gap-6"><span class="flex items-center gap-1.5 text-secondary"><span class="material-symbols-outlined text-[14px]">eco</span> Cold &amp; Wood Extracted</span><span class="flex items-center gap-1.5 text-secondary"><span class="material-symbols-outlined text-[14px]">nature</span> Zero Chemical Additives</span></div></div></div></footer></body></html>
