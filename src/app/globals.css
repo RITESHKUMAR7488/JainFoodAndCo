@@ -13,3 +13,20 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 .app-shell{min-height:100vh;display:flex;flex-direction:column}.app-shell main{flex:1}
+
+/* Original brand mark and women-led workforce story */
+.brand-original{min-width:92px;justify-content:flex-start}
+.brand-original img{width:66px;height:64px;object-fit:contain}
+.women-workforce{padding:112px 0;background:#173a2a;color:#fff;overflow:hidden}
+.workforce-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:76px;align-items:center}
+.workforce-copy h2{color:#fff;max-width:560px}
+.workforce-copy>p{color:rgba(255,255,255,.76);font-size:1.04rem;line-height:1.75;margin-top:20px;max-width:600px}
+.workforce-points{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.18)}
+.workforce-points span{color:rgba(255,255,255,.66);font-size:.82rem}
+.workforce-points b{display:block;color:#fff;font-size:.95rem;margin-bottom:4px}
+.workforce-gallery{position:relative;min-height:590px;padding:0 0 56px 46px}
+.workforce-main{width:100%;height:520px;object-fit:cover;border-radius:20px 100px 20px 20px}
+.workforce-small{position:absolute;left:0;bottom:0;width:230px;height:180px;object-fit:cover;border:8px solid #173a2a;border-radius:14px}
+.footer-brand img{object-fit:contain;background:#f7f0e6;border-radius:7px;padding:3px;filter:none}
+@media(max-width:820px){.brand-original{min-width:auto}.brand-original img{width:54px;height:52px}.workforce-grid{grid-template-columns:1fr;gap:44px}.women-workforce{padding:76px 0}.workforce-gallery{min-height:490px;padding-left:28px}.workforce-main{height:430px}.workforce-small{width:180px;height:140px}}
+@media(max-width:520px){.brand-original img{width:48px;height:48px}.workforce-points{grid-template-columns:1fr}.workforce-gallery{min-height:380px;padding-left:18px;padding-bottom:42px}.workforce-main{height:340px;border-radius:16px 70px 16px 16px}.workforce-small{width:140px;height:105px;border-width:6px}}
