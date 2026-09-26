@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
     try {
       const saved = localStorage.getItem('jain_cart_items');
       return saved ? JSON.parse(saved) : [];
-    } catch (e) {
+    } catch {
       return [];
     }
   });
