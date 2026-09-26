@@ -1,25 +1,35 @@
-# Jain Desi & Pure
+# Jain Desi & Pure — Next.js Storefront
 
-A responsive editorial e-commerce storefront for stone-ground attas, single-origin spices, and wood-pressed oils.
+A responsive storefront for stone-ground attas, single-origin spices, and wood-pressed oils.
 
-## Highlights
-- Responsive layouts for desktop and mobile
-- Product categories, detail pages, search, cart, coupons, and checkout flow
-- Consistent product-card sizing and accessible 44px+ controls
-- Lightweight React 19 + Vite build with vanilla CSS
-- Custom product imagery for mustard and groundnut oils
+## Stack
+- Next.js 16 App Router
+- React 19
+- Vanilla CSS
+- Static product and category routes
+- Client-side cart, search, coupons, and checkout demo
 
 ## Run locally
 ```bash
 npm install
 npm run dev
 ```
+Open `http://localhost:3000`.
 
 ## Production build
 ```bash
 npm run build
-npm run preview
+npm start
 ```
 
-## Notes
-The checkout is a front-end demonstration. Connect it to your payment, inventory, order, and verified certification data before production launch.
+## Main routes
+- `/`
+- `/shop/attas`
+- `/shop/spices`
+- `/shop/oils`
+- `/product/[id]`
+- `/our-process`
+- `/farmers`
+- `/purity`
+
+The checkout remains a front-end demonstration. Authentication, database storage, payments, and production APIs are intentionally not included yet.

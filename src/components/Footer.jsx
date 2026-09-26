@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 export const Footer = ({ onNavigate }) => {
