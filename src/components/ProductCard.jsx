@@ -1,22 +1,23 @@
 'use client';
-import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
-export const ProductCard = ({ product, onSelectProduct }) => {
-  const { addItem } = useCart();
-  const popular = product.sizes?.findIndex(s => s.popular);
-  const [sizeIndex,setSizeIndex] = useState(popular >= 0 ? popular : 0);
-  const size = product.sizes?.[sizeIndex] || {label:'Standard',price:product.price};
-  return <article className="product-card" onClick={() => onSelectProduct(product.id)}>
-    <div className="product-media">
-      <img src={product.image} alt={product.name} loading="lazy"/>
-      {product.badge && <span className="card-badge">{product.badge}</span>}
-      <button className="quick-add" onClick={e => {e.stopPropagation();addItem(product,size,1);}} aria-label={`Add ${product.name}`}><span className="material-symbols-outlined">add</span></button>
-    </div>
-    <div className="product-copy">
-      <div className="product-meta"><span>{product.categoryName}</span><span>★ {product.rating.toFixed(1)}</span></div>
-      <h3>{product.name}</h3><p>{product.subheading}</p>
-      <div className="size-row" onClick={e=>e.stopPropagation()}>{product.sizes?.map((s,i)=><button key={s.label} className={i===sizeIndex?'selected':''} onClick={()=>setSizeIndex(i)}>{s.label}</button>)}</div>
-      <div className="product-bottom"><div><strong>₹{size.price}</strong>{product.originalPrice && <del>₹{Math.round(product.originalPrice/product.price*size.price)}</del>}</div><button className="text-link" onClick={e=>{e.stopPropagation();onSelectProduct(product.id)}}>View details <span>→</span></button></div>
-    </div>
-  </article>;
-};
+import {useState} from 'react';
+import Link from 'next/link';
+import {priceText} from '../data/products';
+import {whatsappHref} from '../lib/contact';
+import {ProductImage} from './ProductImage';
+export function ProductCard({product}) {
+ const [index,setIndex]=useState(0);
+ const size=product.sizes[index];
+ return <article className="product-card">
+  <Link href={`/product/${product.id}`} className="product-media" aria-label={`View ${product.name}`}>
+   <ProductImage src={size.image} alt={`${product.name}${size.confirmedSize?' — '+size.label:''}`}/>
+   {product.isOriginal && <span className="card-badge">Jain Originals</span>}
+  </Link>
+  <div className="product-copy">
+   <div className="product-meta"><span>{product.group}</span></div>
+   <h3><Link href={`/product/${product.id}`}>{product.name}</Link></h3>
+   <div className="size-row" role="group" aria-label={`Pack size for ${product.name}`}>{product.sizes.map((s,i)=><button type="button" key={s.label} aria-pressed={i===index} className={i===index?'selected':''} onClick={()=>setIndex(i)}>{s.label}</button>)}</div>
+   <div className="product-bottom"><strong>{priceText(size.price)}</strong><Link className="text-link" href={`/product/${product.id}`}>Details →</Link></div>
+   <a className="btn btn-primary card-enquiry" href={whatsappHref(product,size)} target="_blank" rel="noopener noreferrer" aria-label={`Enquire about ${product.name} on WhatsApp`}>Enquire on WhatsApp ↗</a>
+  </div>
+ </article>;
+}

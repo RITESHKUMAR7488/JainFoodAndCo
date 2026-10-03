@@ -1,14 +1,11 @@
-'use client';
-import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
-import { brandLogo } from '../lib/brandAssets';
-export const Footer = ({ onNavigate }) => {
- const {showToast}=useCart(); const [email,setEmail]=useState('');
- const submit=e=>{e.preventDefault(); if(!email)return; showToast('Welcome to the harvest list — your 15% code is FIRST15.');setEmail('');};
- return <footer className="footer"><div className="container footer-grid">
-  <div className="footer-brand"><button onClick={()=>onNavigate('home')}><img src={brandLogo} alt="Jain Desi & Pure"/><span>Jain Desi &amp; Pure</span></button><p>Traditional staples, made slowly and sourced with care for modern Indian kitchens.</p></div>
-  <div><h4>Shop</h4><button onClick={()=>onNavigate('category','attas')}>Stone-ground attas</button><button onClick={()=>onNavigate('category','spices')}>Pure spices</button><button onClick={()=>onNavigate('category','oils')}>Cold-pressed oils</button></div>
-  <div><h4>Discover</h4><button onClick={()=>onNavigate('process')}>Our process</button><button onClick={()=>onNavigate('farmers')}>Farmer stories</button><button onClick={()=>onNavigate('certifications')}>Purity promise</button></div>
-  <div><h4>Harvest notes</h4><p>Seasonal recipes and first access to fresh batches.</p><form onSubmit={submit}><input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Email address" required/><button className="btn btn-light">Join</button></form></div>
+import Link from 'next/link';
+import {brandLogo} from '../lib/brandAssets';
+import {categories} from '../data/products';
+import {business,callHref,whatsappHref} from '../lib/contact';
+export function Footer() {
+ return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><Link href="/"><img src={brandLogo} alt="Jain Desi & Pure"/></Link><p>Traditional staples for everyday Indian kitchens.</p><p>{business.delivery}</p></div>
+  <div><h2>Collections</h2>{categories.map(c=><Link key={c.id} href={`/shop/${c.id}`}>{c.name}</Link>)}</div>
+  <div><h2>Discover</h2><Link href="/originals">Jain Originals</Link><Link href="/our-process">Our process</Link><Link href="/farmers">Our people</Link><Link href="/purity">Purity promise</Link></div>
+  <div><h2>Visit or contact us</h2><p>{business.address}</p><p>{business.hours}</p><a href={callHref}>{business.displayPhone}</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a><Link href="/contact">Contact & delivery →</Link></div>
  </div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Jain Desi &amp; Pure</span><span>Made with respect for grain, soil and craft.</span></div></footer>;
-};
+}

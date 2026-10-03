@@ -1,28 +1,17 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import {useEffect,useState} from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useCart } from '../context/CartContext';
-import { brandLogo } from '../lib/brandAssets';
-
-export const Header = () => {
-  const { totalItemCount, setIsCartOpen, setIsSearchOpen } = useCart();
-  const pathname = usePathname();
-  const router = useRouter();
-  const [open, setOpen] = useState(false);
-  useEffect(() => { document.body.style.overflow = open ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [open]);
-  const links = [['Home','/'],['Attas','/shop/attas'],['Spices','/shop/spices'],['Oils','/shop/oils'],['Our process','/our-process'],['Farmers','/farmers'],['Purity','/purity']];
-  const go = (href) => { setOpen(false); router.push(href); };
-  return <>
-    <div className="announcement"><span>Free delivery above ₹999</span><span className="announcement-detail">Small-batch • Stone-ground • Cold-pressed</span></div>
-    <header className="site-header"><div className="container header-inner">
-      <Link className="brand brand-original" href="/" onClick={()=>setOpen(false)} aria-label="Jain Desi & Pure home"><img src={brandLogo} alt="Jain Desi & Pure original logo"/></Link>
-      <nav className={`nav ${open?'open':''}`} aria-label="Main navigation">{links.map(([label,href])=><button key={href} className={pathname===href?'active':''} onClick={()=>go(href)}>{label}</button>)}</nav>
-      <div className="header-actions">
-        <button className="icon-btn" onClick={()=>setIsSearchOpen(true)} aria-label="Search"><span className="material-symbols-outlined">search</span></button>
-        <button className="cart-button" onClick={()=>setIsCartOpen(true)} aria-label={`Basket with ${totalItemCount} items`}><span className="material-symbols-outlined">shopping_bag</span><span className="cart-label">Basket</span>{totalItemCount>0&&<b>{totalItemCount}</b>}</button>
-        <button className="menu-btn" onClick={()=>setOpen(!open)} aria-expanded={open} aria-label="Toggle menu"><span className="material-symbols-outlined">{open?'close':'menu'}</span></button>
-      </div>
-    </div></header>
-  </>;
-};
+import {usePathname} from 'next/navigation';
+import {brandLogo} from '../lib/brandAssets';
+import {business,callHref} from '../lib/contact';
+export function Header({onSearch}) {
+ const pathname=usePathname(),[open,setOpen]=useState(false);
+ useEffect(()=>{document.body.style.overflow=open?'hidden':'';return()=>{document.body.style.overflow='';};},[open]);
+ useEffect(()=>{if(!open)return;const escape=e=>{if(e.key==='Escape')setOpen(false);};window.addEventListener('keydown',escape);return()=>window.removeEventListener('keydown',escape);},[open]);
+ const links=[['Catalog','/shop'],['Originals','/originals'],['Our process','/our-process'],['Our people','/farmers'],['Contact','/contact']];
+ return <><div className="announcement"><span>{business.delivery}</span></div>
+  <header className="site-header"><div className="container header-inner"><Link className="brand brand-original" href="/" onClick={()=>setOpen(false)} aria-label="Jain Desi & Pure home"><img src={brandLogo} alt="Jain Desi & Pure"/></Link>
+   <nav className={`nav ${open?'open':''}`} aria-label="Main navigation">{links.map(([label,href])=><Link key={href} href={href} className={pathname===href?'active':''} aria-current={pathname===href?'page':undefined} onClick={()=>setOpen(false)}>{label}</Link>)}</nav>
+   <div className="header-actions"><button className="icon-btn" onClick={onSearch} aria-label="Search products"><span className="material-symbols-outlined" aria-hidden="true">search</span></button><a className="header-call" href={callHref}><span className="material-symbols-outlined" aria-hidden="true">call</span><span>Call us</span></a><button className="menu-btn" aria-expanded={open} aria-label={open?'Close menu':'Open menu'} onClick={()=>setOpen(!open)}><span className="material-symbols-outlined" aria-hidden="true">{open?'close':'menu'}</span></button></div>
+  </div></header></>;
+}
