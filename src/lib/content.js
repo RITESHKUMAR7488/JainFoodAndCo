@@ -1,0 +1,2 @@
+export const mission = 'Our mission is to make pure, wholesome everyday food accessible to more Indian families — helping parents make better choices today and creating healthier food habits for generations to come.';
+export const vision = ['We want every child to grow up with better food.','Not food that is simply convenient. Not food that is unnecessarily processed.','But food made with good ingredients, traditional wisdom and uncompromising care.'];

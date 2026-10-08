@@ -1,14 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {products,categories,priceText} from '../src/data/products.js';
-import {business,callHref,whatsappHref} from '../src/lib/contact.js';
+import {business,callHref,whatsappHref,customAttaHref,stores,delivery,partnershipCallHref,unassignedStoreMap} from '../src/lib/contact.js';
+import {collections,belongsToCollection} from '../src/lib/collections.js';
 const product=id=>products.find(p=>p.id===id);
 const price=(id,label)=>product(id).sizes.find(s=>s.label===label).price;
-test('catalog has unique products, valid categories and separate pack images',()=>{
+test('catalog has unique products, valid categories and product-specific images',()=>{
  assert.equal(new Set(products.map(p=>p.id)).size,products.length);
  const images=[];
  for(const p of products){assert.ok(categories.some(c=>c.id===p.category));assert.equal(new Set(p.sizes.map(s=>s.label)).size,p.sizes.length);for(const s of p.sizes){assert.ok(s.price===null||s.price>0);images.push(s.image);}}
- assert.equal(new Set(images).size,images.length);
+ assert.ok(images.every(image=>typeof image==='string'&&image.startsWith('/images/unbranded/')));
+ assert.equal(new Set(products.map(p=>p.image)).size,products.length);
  assert.ok(products.length>=100);
 });
 test('client corrections override sample prices and exclude winter atta',()=>{
@@ -28,7 +30,7 @@ test('pending values remain pending and Originals only contain confirmed familie
  assert.equal(price('kabuli-chana','500 g'),null);
  assert.equal(product('murmura').sizes[0].confirmedSize,false);
  assert.equal(priceText(null),'Contact for price');
- for(const p of products)assert.equal(p.isOriginal,['attas','spices','oils'].includes(p.category));
+ for(const p of products)assert.equal(p.isOriginal,['attas','spices','oils','ghee'].includes(p.category));
 });
 test('WhatsApp link is encoded, includes selected product, size and quantity, and never creates an order',()=>{
  const p=product('black-mustard-oil'),size=p.sizes.find(s=>s.label==='2 L');
@@ -36,7 +38,28 @@ test('WhatsApp link is encoded, includes selected product, size and quantity, an
  assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/'+business.phone);
  const text=url.searchParams.get('text');
  assert.match(text,/Black Mustard Oil/);assert.match(text,/Pack: 2 L/);assert.match(text,/Quantity: 3/);assert.match(text,/₹480/);
- assert.equal(callHref,'tel:+919667795721');
+ assert.equal(callHref,'tel:+919217950700');
  const pending=new URL(whatsappHref(product('murmura'),product('murmura').sizes[0])).searchParams.get('text');
  assert.match(pending,/Please advise available sizes/);assert.match(pending,/Please confirm the price/);assert.doesNotMatch(pending,/null|undefined/);
+});
+test('combined collections include every product once and preserve the ghee-only route',()=>{
+ assert.deepEqual(collections.slice(0,3).map(c=>c.id),['oils','attas','spices']);
+ for(const p of products)assert.equal(collections.filter(c=>belongsToCollection(p,c.id)).length,1);
+ assert.ok(belongsToCollection(product('bilona-cow-ghee'),'oils'));
+ assert.ok(belongsToCollection(product('buffalo-ghee'),'originals'));
+ assert.ok(belongsToCollection(product('bilona-cow-ghee'),'ghee'));
+ assert.ok(!belongsToCollection(product('black-mustard-oil'),'ghee'));
+});
+test('store and enquiry destinations use approved contacts without assigning an unmatched map',()=>{
+ assert.equal(stores.length,4);
+ assert.equal(stores[0].primary,true);
+ assert.match(stores[0].address,/Plot No. 118/);
+ assert.equal(stores[0].map,'https://share.google/XnkwbK8IliJt149nU');
+ assert.ok(stores.every(s=>s.map!==unassignedStoreMap));
+ assert.equal(partnershipCallHref,'tel:+918796300867');
+ const custom=new URL(customAttaHref);
+ assert.equal(custom.pathname,'/919217950700');
+ assert.match(custom.searchParams.get('text'),/personalized atta blend/);
+ assert.match(delivery.eligibility,/₹1,000 or more, including atta/);
+ assert.match(delivery.beyond,/delivery charges apply/);
 });

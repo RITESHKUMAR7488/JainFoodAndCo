@@ -1,3 +1,2 @@
-import {CategoryPage} from '../../views/CategoryPage';
-export const metadata={title:'Jain Originals | Atta, Spices & Oils'};
-export default function OriginalsPage(){return <CategoryPage categoryId="originals"/>;}
+import {permanentRedirect} from 'next/navigation';
+export default function OriginalsPage(){permanentRedirect('/shop/originals');}

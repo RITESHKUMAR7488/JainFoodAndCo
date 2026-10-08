@@ -1,11 +1,5 @@
 import Link from 'next/link';
 import {brandLogo} from '../lib/brandAssets';
-import {categories} from '../data/products';
-import {business,callHref,whatsappHref} from '../lib/contact';
-export function Footer() {
- return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><Link href="/"><img src={brandLogo} alt="Jain Desi & Pure"/></Link><p>Traditional staples for everyday Indian kitchens.</p><p>{business.delivery}</p></div>
-  <div><h2>Collections</h2>{categories.map(c=><Link key={c.id} href={`/shop/${c.id}`}>{c.name}</Link>)}</div>
-  <div><h2>Discover</h2><Link href="/originals">Jain Originals</Link><Link href="/our-process">Our process</Link><Link href="/farmers">Our people</Link><Link href="/purity">Purity promise</Link></div>
-  <div><h2>Visit or contact us</h2><p>{business.address}</p><p>{business.hours}</p><a href={callHref}>{business.displayPhone}</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a><Link href="/contact">Contact & delivery →</Link></div>
- </div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Jain Desi &amp; Pure</span><span>Made with respect for grain, soil and craft.</span></div></footer>;
-}
+import {collections} from '../lib/collections';
+import {business,callHref,whatsappHref,delivery} from '../lib/contact';
+export function Footer(){return <footer className="footer"><div className="container footer-grid"><div className="footer-brand"><Link href="/"><img src={brandLogo} alt="Jain Desi & Pure"/></Link><p>For healthier families. For generations to come.</p><p>{business.delivery}</p><p>{delivery.free}. {delivery.beyond}</p></div><div><h2>Collections</h2>{collections.map(c=><Link key={c.id} href={`/shop/${c.id}`}>{c.name}</Link>)}</div><div><h2>Discover</h2><Link href="/about">About Us</Link><Link href="/partnership">Partnership</Link><Link href="/stories/women-behind-jain-desi-and-pure">Community stories</Link></div><div><h2>Visit our main store</h2><p>{business.address}</p><p>{business.hours}</p><a href={callHref}>{business.displayPhone}</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a><Link href="/contact">Our stores & delivery →</Link></div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Jain Desi &amp; Pure</span><span>Made with respect for ingredient, people and craft.</span></div></footer>;}

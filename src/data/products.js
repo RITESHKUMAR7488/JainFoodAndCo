@@ -1,10 +1,10 @@
 // Client sheets, 2–3 October 2026, and explicit chat corrections.
 // null prices are pending. Flour packs of 1 kg are user-authorized defaults.
 export const categories = [
- {id:'attas',name:'Atta & Flours',tagline:'Wheat, millet and everyday flours for your kitchen.',banner:'/images/attas-bowls.jpg',original:true},
+ {id:'attas',name:'Atta & Flours',tagline:'Wheat, millet and everyday flours for your kitchen.',banner:'/images/unbranded/khapli-wheat-atta.png',original:true},
  {id:'spices',name:'Spices & Masalas',tagline:'Whole spices, ground spices and familiar kitchen blends.',banner:'/images/spices-bowls.jpg',original:true},
- {id:'oils',name:'Oils',tagline:'Mustard, coconut, sesame and more, in the packs you need.',banner:'/images/oils-banner.jpg',original:true},
- {id:'ghee',name:'Ghee',tagline:'Bilona cow ghee and buffalo ghee.',banner:'/images/catalog/bilona-cow-ghee-1-l.png'},
+ {id:'oils',name:'Oil & Ghee',tagline:'Cold-pressed oils and bilona ghee for your everyday kitchen.',banner:'/images/unbranded/lakdi-ghani-mustard-oil.png',original:true},
+ {id:'ghee',name:'Ghee',tagline:'Bilona cow ghee and buffalo ghee.',banner:'/images/unbranded/bilona-cow-ghee.png',original:true},
  {id:'grains',name:'Grains & Pantry',tagline:'Rice, poha, daliya and pantry staples.'},
  {id:'pulses',name:'Pulses & Beans',tagline:'Chana, rajma, lentils and beans for everyday meals.'},
  {id:'seeds',name:'Seeds',tagline:'Pumpkin, sunflower, watermelon and chia seeds.'},
@@ -126,7 +126,7 @@ export const products = catalog.trim().split('\n').map(row => {
  const cat=categories.find(c=>c.id===category);
  const sizes=(packList?packList.split(','):['Ask for sizes:']).map(pair=>{
   const [label,value]=pair.split(':');
-  return {label,price:value===''?null:Number(value),image:`/images/catalog/${id}-${packKey(label)}.png`,confirmedSize:label!=='Ask for sizes'};
+  return {label,price:value===''?null:Number(value),image:`/images/unbranded/${id}.png`,confirmedSize:label!=='Ask for sizes'};
  });
  return {id,name,category,group,categoryName:cat.name,isOriginal:!!cat.original,subheading:group,
   description:`Explore ${name.toLowerCase()} from our pantry collection. Contact our Noida store for availability and product details.`,

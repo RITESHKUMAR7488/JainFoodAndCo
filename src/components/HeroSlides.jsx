@@ -1,0 +1,4 @@
+'use client';
+import {useState} from 'react';
+const slides=[['/images/delivery-hero.png','An illustrative fresh-grocery delivery at a Noida home','Fresh food, closer to home'],['/images/chakki-banner.jpg','Traditional stone milling and fresh flour','See the milling process'],['/images/process-ghani.jpg','Traditional wooden oil press','The care behind your pantry']];
+export function HeroSlides(){const [index,setIndex]=useState(0);return <div className="hero-slides"><img src={slides[index][0]} alt={slides[index][1]} fetchPriority={index===0?'high':'auto'}/><div className="slide-caption"><span>{slides[index][2]}</span><div className="slide-controls" role="group" aria-label="Hero images">{slides.map((s,i)=><button key={s[0]} type="button" aria-label={`Show image ${i+1}: ${s[2]}`} aria-pressed={index===i} onClick={()=>setIndex(i)}>{String(i+1).padStart(2,'0')}</button>)}</div></div></div>;}
