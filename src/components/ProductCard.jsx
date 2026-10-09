@@ -10,7 +10,7 @@ export function ProductCard({product}) {
  return <article className="product-card">
   <Link href={`/product/${product.id}`} className="product-media" aria-label={`View ${product.name}`}>
    <ProductImage src={size.image} alt={`${product.name}${size.confirmedSize?' — '+size.label:''}`}/>
-   {product.isOriginal && <span className="card-badge">Jain Originals</span>}
+   {product.isOriginal && <span className="card-badge">In House</span>}
   </Link>
   <div className="product-copy">
    <div className="product-meta"><span>{product.group}</span></div>

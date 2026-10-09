@@ -7,5 +7,5 @@ export function ProductImage({src,alt,className='',eager=false,sizes='(max-width
 function ImageContent({src,alt,className,eager,sizes}) {
  const [failed,setFailed]=useState(!src);
  return failed ? <div className={`product-photo-pending ${className}`} role="img" aria-label={alt}><span className="material-symbols-outlined" aria-hidden="true">inventory_2</span><span>{alt}</span></div>
-  : <Image className={className} src={src} alt={alt} width={640} height={640} sizes={sizes} loading={eager?'eager':'lazy'} onError={()=>setFailed(true)}/>;
+  : <Image unoptimized={src.endsWith(".webp")} className={className} src={src} alt={alt} width={640} height={640} sizes={sizes} loading={eager?'eager':'lazy'} onError={()=>setFailed(true)}/>;
 }

@@ -126,7 +126,7 @@ export const products = catalog.trim().split('\n').map(row => {
  const cat=categories.find(c=>c.id===category);
  const sizes=(packList?packList.split(','):['Ask for sizes:']).map(pair=>{
   const [label,value]=pair.split(':');
-  return {label,price:value===''?null:Number(value),image:`/images/unbranded/${id}.png`,confirmedSize:label!=='Ask for sizes'};
+  return {label,price:value===''?null:Number(value),image:`/images/unbranded/${id}.${["daliya","pumpkin-seeds"].includes(id)?"webp":"png"}`,confirmedSize:label!=='Ask for sizes'};
  });
  return {id,name,category,group,categoryName:cat.name,isOriginal:!!cat.original,subheading:group,
   description:`Explore ${name.toLowerCase()} from our pantry collection. Contact our Noida store for availability and product details.`,

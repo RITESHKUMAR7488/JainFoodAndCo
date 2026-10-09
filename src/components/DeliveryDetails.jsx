@@ -1,2 +1,2 @@
-import {delivery} from '../lib/contact';
-export function DeliveryDetails(){return <div className="delivery-details"><p><strong>{delivery.headline}</strong></p><p>{delivery.eligibility}</p><p>{delivery.free}. {delivery.beyond}</p></div>;}
+import {delivery,business,callHref,whatsappHref} from '../lib/contact';
+export function DeliveryDetails({showTitle=true}){return <div className="delivery-details">{showTitle&&<h3>Home Delivery</h3>}<dl className="delivery-facts"><div><dt>Free delivery</dt><dd>Within 5 km</dd></div><div><dt>Fresh atta in 2 hours</dt><dd>Central Noida</dd></div><div><dt>Minimum order</dt><dd>₹1,000, including atta</dd></div></dl><p className="delivery-visit">{delivery.visit}.</p><p className="delivery-conditions">Within 5 km of our Sector 122 store. {delivery.beyond}</p><div className="delivery-contact"><a href={callHref}>Call {business.displayPhone}</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">WhatsApp us ↗</a></div></div>;}
