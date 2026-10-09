@@ -38,7 +38,7 @@ test('WhatsApp link is encoded, includes selected product, size and quantity, an
  assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/'+business.phone);
  const text=url.searchParams.get('text');
  assert.match(text,/Black Mustard Oil/);assert.match(text,/Pack: 2 L/);assert.match(text,/Quantity: 3/);assert.match(text,/₹480/);
- assert.equal(callHref,'tel:+919217950700');
+ assert.equal(callHref,'tel:+917838700651');
  const pending=new URL(whatsappHref(product('murmura'),product('murmura').sizes[0])).searchParams.get('text');
  assert.match(pending,/Please advise available sizes/);assert.match(pending,/Please confirm the price/);assert.doesNotMatch(pending,/null|undefined/);
 });
@@ -52,15 +52,21 @@ test('combined collections include every product once and preserve the ghee-only
 });
 test('store and enquiry destinations use approved contacts without assigning an unmatched map',()=>{
  assert.equal(stores.length,3);
- assert.deepEqual(stores.map(s=>s.id),['main','sector-116','sector-141']);
+ assert.deepEqual(stores.map(s=>s.id),['main','sector-116','noida-extension']);
  assert.match(stores[1].address,/H-09, Sector 116/);
  assert.equal(stores[0].primary,true);
- assert.match(stores[0].address,/Plot No. 118/);
- assert.equal(stores[0].map,'https://share.google/XnkwbK8IliJt149nU');
+ assert.match(stores[0].address,/Sector 122/);
+ assert.equal(stores[0].phone,'919667795721');
+ assert.equal(stores[1].phone,'919953887666');
+ assert.equal(stores[2].phone,'919217950700');
+ assert.match(stores[2].address,/Iteda/);
+ assert.equal(stores[0].hours,'Daily: 10 AM–8 PM');
+ assert.equal(stores[2].hours,'Daily: 10 AM–8 PM');
+ assert.match(stores[0].map,/google.com\/maps\/search/);
  assert.ok(stores.every(s=>s.map!==unassignedStoreMap));
  assert.equal(partnershipCallHref,'tel:+918796300867');
  const custom=new URL(customAttaHref);
- assert.equal(custom.pathname,'/919217950700');
+ assert.equal(custom.pathname,'/917838700651');
  assert.match(custom.searchParams.get('text'),/personalized atta blend/);
  assert.match(delivery.eligibility,/₹1,000 or more, including atta/);
  assert.match(delivery.beyond,/delivery charges apply/);

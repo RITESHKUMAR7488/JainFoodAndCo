@@ -1,6 +1,6 @@
 import {products} from '../data/products.js';
 import {enquiryHref} from './contact.js';
-export const attaGrains=products.filter(p=>p.category==='attas'&&['Wheat','Millet & Other Flours'].includes(p.group)).map(p=>({id:p.id,name:p.name.replace(/\s+Atta$/,'')}));
+export const attaGrains=products.filter(p=>p.category==='attas'&&['Wheat','Millet & Other Flours'].includes(p.group)).map(p=>({id:p.id,name:p.name.replace(/\s+Atta$/,''),image:p.image}));
 export function prepareAttaBlend(quantities){
  const grains=attaGrains.filter(g=>Object.hasOwn(quantities,g.id)).map(g=>({...g,grams:Number(quantities[g.id])}));
  if(!grains.length||grains.some(g=>!Number.isSafeInteger(g.grams)||g.grams<=0))return null;

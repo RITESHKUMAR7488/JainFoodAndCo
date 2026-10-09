@@ -1,12 +1,13 @@
 'use client';
 import {useEffect,useRef,useState} from 'react';
 import Link from 'next/link';
-import {products,priceText} from '../data/products';
+import {priceText} from '../data/products';
 import {ProductImage} from './ProductImage';
-export function SearchModal({onClose}) {
- const ref=useRef(null),inputRef=useRef(null),[query,setQuery]=useState('');
+import {searchProducts} from '../lib/productSearch';
+export function SearchModal({onClose,initialQuery=''}) {
+ const ref=useRef(null),inputRef=useRef(null),[query,setQuery]=useState(initialQuery);
  useEffect(()=>{const dialog=ref.current,opener=document.activeElement;dialog.showModal();inputRef.current.focus();return()=>{dialog.close();if(opener instanceof HTMLElement&&opener.isConnected)opener.focus();};},[]);
- const filtered=products.filter(p=>`${p.name} ${p.group} ${p.categoryName}`.toLowerCase().includes(query.trim().toLowerCase()));
+ const filtered=searchProducts(query);
  return <dialog ref={ref} className="catalog-search" aria-labelledby="search-title" onCancel={onClose} onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();onClose();}}} onClick={e=>{if(e.target===ref.current)onClose();}}>
   <div className="search-dialog-header"><h2 id="search-title">More to discover</h2><button className="icon-btn" onClick={onClose} aria-label="Close search">×</button></div>
   <label className="search-field">Product name or collection<input ref={inputRef} type="search" placeholder="Try jeera, khapli, ghee…" value={query} onChange={e=>setQuery(e.target.value)}/></label>
