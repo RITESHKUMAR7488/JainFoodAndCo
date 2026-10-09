@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {priceText} from '../data/products';
 import {whatsappHref} from '../lib/contact';
 import {ProductImage} from './ProductImage';
+import {PriceNotice} from './PriceNotice';
 export function ProductCard({product}) {
  const [index,setIndex]=useState(0);
  const size=product.sizes[index];
@@ -17,6 +18,7 @@ export function ProductCard({product}) {
    <h3><Link href={`/product/${product.id}`}>{product.name}</Link></h3>
    <div className="size-row" role="group" aria-label={`Pack size for ${product.name}`}>{product.sizes.map((s,i)=><button type="button" key={s.label} aria-pressed={i===index} className={i===index?'selected':''} onClick={()=>setIndex(i)}>{s.label}</button>)}</div>
    <div className="product-bottom"><strong>{priceText(size.price)}</strong><Link className="text-link" href={`/product/${product.id}`}>Details →</Link></div>
+   <PriceNotice/>
    <a className="btn btn-primary card-enquiry" href={whatsappHref(product,size)} target="_blank" rel="noopener noreferrer" aria-label={`Enquire about ${product.name} on WhatsApp`}>Enquire on WhatsApp ↗</a>
   </div>
  </article>;
