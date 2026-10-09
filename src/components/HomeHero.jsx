@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {HeroSlides} from './HeroSlides';
+import {brandLogo} from '../lib/brandAssets';
 import {business,callHref,whatsappHref,delivery} from '../lib/contact';
 
 export function HomeHero(){return <>
@@ -7,7 +8,7 @@ export function HomeHero(){return <>
   <div className="home-hero-heading"><span className="eyebrow">Jain Desi &amp; Pure · Noida</span><span>Good ingredients. Prepared with care.</span></div>
   <div className="home-hero-layout">
    <div className="home-hero-main">
-    <div className="home-hero-copy"><span className="hero-kicker">Freshly milled. Delivered to your door.</span><h1>Fresh atta.<br/><em>In 2 hours.</em></h1><p>Everyday food, prepared with care. Fresh atta, cold-pressed oils, bilona ghee and spices for your family.</p><div className="hero-order-note"><span className="material-symbols-outlined" aria-hidden="true">schedule</span><span><strong>Fresh atta in 2 hours in Central Noida</strong><small>{delivery.minimum}</small></span></div><div className="home-hero-actions"><Link className="btn btn-primary" href="/shop/attas">Explore our atta →</Link><a className="text-link" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Enquire on WhatsApp ↗</a></div></div>
+    <div className="home-hero-copy"><div className="hero-brand"><img src={brandLogo} alt="" width="72" height="78"/><div><span className="hero-brand-name">Jain Desi &amp; Pure</span><span className="hero-brand-tagline">For healthier families.<br/>For generations to come.</span></div></div><span className="hero-kicker">Bringing health at the forefront.</span><h1>Fresh atta.<br/><em>In 2 hours.</em></h1><p>Everyday food, prepared with care. Fresh atta, cold-pressed oils, bilona ghee and spices for your family.</p><div className="hero-order-note"><span className="material-symbols-outlined" aria-hidden="true">schedule</span><span><strong>Fresh atta in 2 hours in Central Noida</strong><small>{delivery.minimum}</small></span></div><div className="home-hero-actions"><Link className="btn btn-primary" href="/shop/attas">Explore our atta →</Link><a className="text-link" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Enquire on WhatsApp ↗</a></div></div>
     <HeroSlides/>
    </div>
    <aside className="home-action-rail" aria-label="Delivery, store visits and custom atta">
