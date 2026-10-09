@@ -13,7 +13,7 @@ export function HomeHero(){return <>
    <aside className="home-action-rail" aria-label="Delivery, store visits and custom atta">
     <article className="rail-delivery"><span className="material-symbols-outlined" aria-hidden="true">local_shipping</span><span className="eyebrow">Home delivery</span><h2>Free within <br/><strong>5 km.</strong></h2><p>Beyond 5 km? We deliver with a charge confirmed by our team.</p><div className="rail-atta-note"><strong>Fresh atta in 2 hours</strong><span>Central Noida · {delivery.minimum}</span></div><a href={callHref}>Call {business.displayPhone} ↗</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a></article>
     <Link className="rail-visit" href="#stores"><div><span className="eyebrow">Sector 122, Noida</span><h2>Come and see<br/>live processing.</h2><span className="rail-link">Visit our main store →</span></div><img src="/images/menu-cutouts/oils.png" alt="" width="64" height="76"/></Link>
-    <Link className="rail-blend" href="/shop/attas#custom-atta"><img src="/images/menu-cutouts/attas.png" alt="" width="76" height="68"/><div><h2>Your grains.<br/>Your atta.</h2><span className="rail-link">Make your own blend →</span></div></Link>
+    <Link className="rail-blend" href="/customize-atta"><img src="/images/menu-cutouts/attas.png" alt="" width="76" height="68"/><div><h2>Your grains.<br/>Your atta.</h2><span className="rail-link">Make your own blend →</span></div></Link>
    </aside>
   </div>
  </div></section>
