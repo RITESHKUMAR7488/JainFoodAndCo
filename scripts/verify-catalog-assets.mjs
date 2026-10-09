@@ -11,7 +11,7 @@ for(const path of paths){
   const buffer=await readFile(new URL(path.slice(1),root));
   const metadata=await sharp(buffer).metadata();
   await sharp(buffer).stats();
-  if(metadata.format!=='png'||metadata.width!==metadata.height||metadata.width<600)issues.push({path,error:'Expected square PNG of at least 600 px'});
+  if(!['png','webp'].includes(metadata.format)||metadata.width!==metadata.height||metadata.width<600)issues.push({path,error:'Expected square PNG or WebP of at least 600 px'});
   bytes+=buffer.length;
  }catch(error){issues.push({path,error:error.message});}
 }
