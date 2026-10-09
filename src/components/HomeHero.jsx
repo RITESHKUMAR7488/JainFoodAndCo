@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import {HeroSlides} from './HeroSlides';
+import {HeroVideo} from './HeroVideo';
 import {brandLogo} from '../lib/brandAssets';
 import {business,callHref,whatsappHref,delivery} from '../lib/contact';
 
@@ -8,7 +8,7 @@ export function HomeHero(){return <>
   <div className="home-hero-layout">
    <div className="home-hero-main">
     <div className="home-hero-copy"><div className="hero-brand"><img src={brandLogo} alt="" width="72" height="78"/><div><span className="hero-brand-name">Jain Desi &amp; Pure</span><span className="hero-brand-tagline">For healthier families.<br/>For generations to come.</span></div></div><span className="hero-kicker">Our vision · Bringing health at the forefront.</span><h1 className="hero-vision-title">We want every child to grow up with <em>better food.</em></h1><p>Food made with good ingredients, traditional wisdom and uncompromising care.</p><div className="hero-mission-note"><p>Making pure, wholesome everyday food accessible to more Indian families.</p><Link className="text-link" href="#mission">Discover our mission →</Link></div><div className="home-hero-actions"><Link className="btn btn-primary" href="/shop">Explore our products →</Link><a className="text-link" href={whatsappHref()} target="_blank" rel="noopener noreferrer">Enquire on WhatsApp ↗</a></div></div>
-    <HeroSlides/>
+    <HeroVideo/>
    </div>
    <aside className="home-action-rail" aria-label="Delivery, store visits and custom atta">
     <article className="rail-delivery"><span className="material-symbols-outlined" aria-hidden="true">local_shipping</span><span className="eyebrow">Home delivery</span><h2>Free within <br/><strong>5 km.</strong></h2><p>Beyond 5 km? We deliver with a charge confirmed by our team.</p><div className="rail-atta-note"><strong>Fresh atta in 2 hours</strong><span>Central Noida · {delivery.minimum}</span></div><a href={callHref}>Call {business.displayPhone} ↗</a><a href={whatsappHref()} target="_blank" rel="noopener noreferrer">Chat on WhatsApp ↗</a></article>
