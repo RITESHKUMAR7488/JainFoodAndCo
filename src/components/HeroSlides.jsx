@@ -4,7 +4,7 @@ import {delivery} from '../lib/contact';
 const slides=[
  {src:'/images/delivery-hero.png',alt:'An illustrative fresh-grocery delivery at a Noida home',caption:'Fresh food, closer to home',label:'Fresh atta delivered in 2 hours',detail:delivery.eligibility,icon:'local_shipping',duration:5000},
  {src:'/images/chakki-banner.jpg',alt:'Traditional stone milling and fresh flour',caption:'See the milling process',label:'Freshly milled atta',detail:'Traditional stone milling',icon:'grain',duration:2000},
- {src:'/images/process-ghani.jpg',alt:'Traditional wooden oil press',caption:'The care behind your pantry',label:'Traditional cold-pressed oils',detail:'See the care behind every batch',icon:'water_drop',duration:2000}
+ {src:'/images/process-ghani.jpg',alt:'Traditional wooden oil press',caption:'More to discover, made with care',label:'Traditional cold-pressed oils',detail:'See the care behind every batch',icon:'water_drop',duration:2000}
 ];
 export function HeroSlides(){
  const [index,setIndex]=useState(0);

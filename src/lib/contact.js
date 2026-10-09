@@ -9,9 +9,8 @@ export const delivery = {
 const mapSearch = address => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 export const stores = [
  {id:'main',name:'Where we began',area:'Sector 122, Noida',address:'Plot No. 118, Opposite Fusion Homes, Sector 122, Noida',hours:null,map:'https://share.google/XnkwbK8IliJt149nU',primary:true},
- {id:'sector-122',name:'Sector 122 outlet',address:'10, Ground Floor, PK-A, near Baraamda Restaurant, Sector 122, Noida, Uttar Pradesh 201316',hours:'Daily: 10 AM–9:30 PM'},
+ {id:'sector-116',name:'Sector 116 outlet',address:'H-09, Sector 116, Noida',hours:null},
  {id:'sector-141',name:'Sector 141 outlet',address:'Sector 141, Noida, Uttar Pradesh',hours:'Daily: 10 AM–9:30 PM',map:'https://share.google/VQml9wvo1RRT23zSp'},
- {id:'sector-119',name:'Sector 119 outlet',address:'Shop No. 004, Eldeco Utopia, Eldeco Edge Market, Sector 119, Noida, Uttar Pradesh 201306',hours:'Closes at 9:30 PM. Please enquire for opening hours.'},
 ].map(store=>({...store,map:store.map||mapSearch(store.address)}));
 export const unassignedStoreMap = 'https://share.google/tajbDpiXUHWAany9n';
 export const business = {phone:'919217950700',displayPhone:'+91 92179 50700',address:stores[0].address,hours:'Please enquire for opening hours',delivery:`Free delivery within 5 km · Fresh atta delivered in 2 hours in Central Noida · ${delivery.minimum}`};

@@ -12,7 +12,7 @@ export function CategoryPage({categoryId='all'}) {
  const cat=categories.find(c=>c.id===categoryId);
  const [sort,setSort]=useState('featured'),[query,setQuery]=useState(''),[group,setGroup]=useState('all');
  const items=products.filter(p=>belongsToCollection(p,categoryId));
- const groups=[...new Set(items.map(p=>p.group))];
+ const groups=[...new Set(items.map(p=>p.group))].sort((a,b)=>Number(a==='More')-Number(b==='More'));
  const visible=items.filter(p=>(group==='all'||p.group===group)&&`${p.name} ${p.group}`.toLowerCase().includes(query.trim().toLowerCase())).sort((a,b)=>{
   if(sort==='name')return a.name.localeCompare(b.name);
   if(sort==='featured')return 0;
@@ -20,7 +20,7 @@ export function CategoryPage({categoryId='all'}) {
   if(ap===bp)return 0;if(ap===Infinity)return 1;if(bp===Infinity)return -1;
   return sort==='low'?ap-bp:bp-ap;
  });
- const title=cat?.name||(categoryId==='originals'?'In House':'The full pantry');
+ const title=cat?.name||(categoryId==='originals'?'In House':'More to discover');
  const rows=['all','originals'].includes(categoryId);
  return <div>
   <section className={`category-hero ${cat?.banner?'':'catalog-intro'}`}><div className="container category-hero-grid"><div><Link className="back-link" href="/">← Home</Link><span className="eyebrow">{categoryId==='originals'?'Oil & Ghee · Atta · Spices':'Browse our collections'}</span><h1>{title}</h1><p>{cat?.tagline||(categoryId==='originals'?'Jain Desi & Pure — In House & Chemical Free. Explore our own collection of oils, ghee, atta and spices.':'Discover everyday staples and enquire directly with our Noida store.')}</p><Link className="text-link" href="/contact">Delivery details →</Link></div>{cat?.banner&&<ProductImage src={cat.banner} alt={`${title} collection`}/>}</div></section>

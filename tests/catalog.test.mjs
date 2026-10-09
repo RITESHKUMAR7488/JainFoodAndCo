@@ -51,7 +51,9 @@ test('combined collections include every product once and preserve the ghee-only
  assert.ok(!belongsToCollection(product('black-mustard-oil'),'ghee'));
 });
 test('store and enquiry destinations use approved contacts without assigning an unmatched map',()=>{
- assert.equal(stores.length,4);
+ assert.equal(stores.length,3);
+ assert.deepEqual(stores.map(s=>s.id),['main','sector-116','sector-141']);
+ assert.match(stores[1].address,/H-09, Sector 116/);
  assert.equal(stores[0].primary,true);
  assert.match(stores[0].address,/Plot No. 118/);
  assert.equal(stores[0].map,'https://share.google/XnkwbK8IliJt149nU');

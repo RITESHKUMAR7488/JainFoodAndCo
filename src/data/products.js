@@ -5,10 +5,10 @@ export const categories = [
  {id:'spices',name:'Spices & Masalas',tagline:'Whole spices, ground spices and familiar kitchen blends.',banner:'/images/spices-bowls.jpg',original:true},
  {id:'oils',name:'Oil & Ghee',tagline:'Cold-pressed oils and bilona ghee for your everyday kitchen.',banner:'/images/unbranded/lakdi-ghani-mustard-oil.png',original:true},
  {id:'ghee',name:'Ghee',tagline:'Bilona cow ghee and buffalo ghee.',banner:'/images/unbranded/bilona-cow-ghee.png',original:true},
- {id:'grains',name:'Grains & Pantry',tagline:'Rice, poha, daliya and pantry staples.'},
  {id:'pulses',name:'Pulses & Beans',tagline:'Chana, rajma, lentils and beans for everyday meals.'},
  {id:'seeds',name:'Seeds',tagline:'Pumpkin, sunflower, watermelon and chia seeds.'},
  {id:'sweeteners',name:'Honey & Sweeteners',tagline:'Honey, khand, gud and traditional sweeteners.'},
+ {id:'grains',name:'More',tagline:'Rice, poha, daliya and more to discover.'},
 ];
 // id | product name | category | subgroup | size:price (blank = pending)
 const catalog = `
@@ -89,15 +89,15 @@ sabji-masala|Sabji Masala|spices|Ground Spices & Masalas|100 g:90
 paneer-masala|Paneer Masala|spices|Ground Spices & Masalas|100 g:90
 mulethi|Mulethi|spices|Ground Spices & Masalas|100 g:90
 dalchini-powder|Dalchini Powder|spices|Ground Spices & Masalas|100 g:145
-murmura|Murmura|grains|Pantry|
-poha|Poha|grains|Pantry|500 g:58
-daliya|Daliya|grains|Pantry|500 g:45
-makhana|Makhana|grains|Pantry|200 g:430
+murmura|Murmura|grains|More|
+poha|Poha|grains|More|500 g:58
+daliya|Daliya|grains|More|500 g:45
+makhana|Makhana|grains|More|200 g:430
 sona-masoori-rice|South Sona Masoori Rice|grains|Rice|1 kg:95
 bengal-basmati-rice|Bengal Royal Basmati Rice|grains|Rice|1 kg:160
 soyabean|Soyabean|pulses|Beans|
 bhuna-chana|Bhuna Chana (Roasted Chickpeas)|pulses|Chana|
-groundnuts|Groundnuts|grains|Pantry|
+groundnuts|Groundnuts|grains|More|
 kale-chana|Kale Chana|pulses|Chana|500 g:60,1 kg:120
 kabuli-chana|Kabuli Chana|pulses|Chana|500 g:,1 kg:185
 dabra-chana|Dabra (Large Kabuli Chana)|pulses|Chana|500 g:110,1 kg:215
@@ -129,7 +129,7 @@ export const products = catalog.trim().split('\n').map(row => {
   return {label,price:value===''?null:Number(value),image:`/images/unbranded/${id}.${["daliya","pumpkin-seeds"].includes(id)?"webp":"png"}`,confirmedSize:label!=='Ask for sizes'};
  });
  return {id,name,category,group,categoryName:cat.name,isOriginal:!!cat.original,subheading:group,
-  description:`Explore ${name.toLowerCase()} from our pantry collection. Contact our Noida store for availability and product details.`,
+  description:`Explore ${name.toLowerCase()} and more to discover across our collections. Contact our Noida store for availability and product details.`,
   sizes,price:sizes[0].price,image:sizes[0].image,
   chosenPack:category==='attas' && sizes[0].label==='1 kg',
  };
