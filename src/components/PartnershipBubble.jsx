@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function PartnershipBubble(){
  const popupRef=useRef(null);
  return <>
-  <button className="partnership-bubble" type="button" popoverTarget="partnership-opportunity" aria-label="Explore partnership opportunity"><span className="material-symbols-outlined" aria-hidden="true">forum</span></button>
+  <button className="partnership-bubble" type="button" popoverTarget="partnership-opportunity" aria-label="Explore partnership opportunity"><span className="material-symbols-outlined" aria-hidden="true">handshake</span><span className="partnership-bubble-label">Partnership</span></button>
   <aside ref={popupRef} id="partnership-opportunity" className="partnership-opportunity" popover="auto" aria-labelledby="partnership-opportunity-title">
    <button className="partnership-popup-close" type="button" popoverTarget="partnership-opportunity" popoverTargetAction="hide" aria-label="Close partnership opportunity"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
    <span className="eyebrow">Grow with Jain Desi &amp; Pure</span>
