@@ -6,15 +6,17 @@ export const delivery = {
  minimum: 'Minimum order value: ₹1,000, including atta',
  visit: 'Come and see live processing at Sector 122, Noida',
 };
+const orderContact = {phone:'919667795721',displayPhone:'+91 96677 95721'};
 const mapSearch = address => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 export const stores = [
  {id:'main',name:'Sector 122 outlet',area:'Sector 122, Noida',address:'10, Ground Floor, PK-A, near Baraamda Restaurant, Sector 122, Noida, UP 201316',phone:'919667795721',displayPhone:'+91 96677 95721',hours:'Daily: 10 AM–8 PM',primary:true},
- {id:'sector-116',name:'Sector 116 outlet',address:'H-09, Sector 116, Noida',phone:'919953887666',displayPhone:'+91 99538 87666',hours:null},
- {id:'noida-extension',name:'Noida Extension outlet',address:'Plot No. 118, Iteda, near Bachpan Play School, opposite Fusion Homes and Centurian Park, Noida Extension',phone:'919217950700',displayPhone:'+91 92179 50700',hours:'Daily: 10 AM–8 PM'},
-].map(store=>({...store,map:store.map||mapSearch(store.address)}));
+ {id:'sector-116',name:'Sector 116 outlet',address:'H-09, Sector 116, Noida',hours:null},
+ {id:'noida-extension',name:'Noida Extension outlet',address:'Plot No. 118, Iteda, near Bachpan Play School, opposite Fusion Homes and Centurian Park, Noida Extension',hours:'Daily: 10 AM–8 PM'},
+].map(store=>({...store,...orderContact,map:store.map||mapSearch(store.address)}));
 export const unassignedStoreMap = 'https://share.google/tajbDpiXUHWAany9n';
-export const business = {phone:'917838700651',displayPhone:'+91 78387 00651',address:stores[0].address,hours:stores[0].hours,delivery:`Free delivery within 5 km; charges apply beyond 5 km · Get our products in 2 hours in Central Noida · ${delivery.minimum}`};
+export const business = {...orderContact,address:stores[0].address,hours:stores[0].hours,delivery:`Free delivery within 5 km; charges apply beyond 5 km · Get our products in 2 hours in Central Noida · ${delivery.minimum}`};
 export const partnership = {phone:'918796300867',displayPhone:'+91 87963 00867',investment:'₹30 lakh',locations:['Noida Expressway · Sectors 128 & 168','Noida · Sectors 104 & 18','Indirapuram','Greater Noida','Gurgaon','Dwarka Expressway','Dwarka','Faridabad','Bengaluru','Pune','Hyderabad']};
+export const sachinPartnership = {phone:'917838700651',displayPhone:'+91 78387 00651'};
 export const callHref = `tel:+${business.phone}`;
 export const partnershipCallHref = `tel:+${partnership.phone}`;
 export function enquiryHref(message) {return `https://wa.me/${business.phone}?text=${encodeURIComponent(message)}`;}

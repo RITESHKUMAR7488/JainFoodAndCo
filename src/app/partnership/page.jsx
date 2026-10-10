@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import {business,partnership,partnershipCallHref,callHref} from '../../lib/contact';
+import {partnership,sachinPartnership,partnershipCallHref} from '../../lib/contact';
 export const metadata={title:'Partner with Jain Desi & Pure',description:'A business opportunity for entrepreneurs. Minimum investment ₹30 lakh, with procurement and processing setup facilitated by Jain Desi.'};
 function PartnershipContacts({light=false}){
  return <div className={`partnership-contact-options ${light?'on-dark':''}`}>
   <a className="partnership-phone" href={partnershipCallHref}><span className="material-symbols-outlined" aria-hidden="true">call</span><span><small>Sonam Sabikhi · Partnership</small><strong>{partnership.displayPhone}</strong></span></a>
-  <a className="partnership-phone" href={callHref}><span className="material-symbols-outlined" aria-hidden="true">call</span><span><small>Sachin Jain</small><strong>{business.displayPhone}</strong></span></a>
+  <a className="partnership-phone" href={`tel:+${sachinPartnership.phone}`}><span className="material-symbols-outlined" aria-hidden="true">call</span><span><small>Sachin Jain · Partnership</small><strong>{sachinPartnership.displayPhone}</strong></span></a>
  </div>;
 }
 export default function PartnershipPage(){return <>
