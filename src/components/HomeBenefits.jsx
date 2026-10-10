@@ -1,0 +1,2 @@
+const benefits=[['eco','Chemical Free','No unnecessary chemicals or additives'],['nutrition','Wholesome Nutrition','Everyday food you can trust'],['diversity_3','For Healthier Families','Starting with those who matter most'],['all_inclusive','For Generations to Come','Better food today, healthier tomorrow']];
+export function HomeBenefits(){return <div className="hero-benefits">{benefits.map(([icon,title,detail])=><div key={title}><span className="material-symbols-outlined" aria-hidden="true">{icon}</span><strong>{title}</strong><small>{detail}</small></div>)}</div>;}
