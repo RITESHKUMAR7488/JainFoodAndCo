@@ -231,3 +231,6 @@ html{scroll-padding-top:140px}
 .partnership-bubble-label{font-size:.9rem;font-weight:600;line-height:1}
 @media(max-width:820px){.partnership-bubble{width:auto;padding:0 12px}.partnership-bubble-label{font-size:.8rem}}
 .floating-whatsapp .whatsapp-brand-icon{display:block;flex-shrink:0;width:26px;height:26px}
+.storefront-header .nav a.nav-partnership-highlight{background:#f58a32;color:#fff;border:0;border-radius:999px;padding:14px 20px;font-weight:700;min-height:48px}
+.storefront-header .nav a.nav-partnership-highlight:hover,.storefront-header .nav a.nav-partnership-highlight[aria-current="page"]{background:#bc5427;color:#fff}
+.mobile-bottom-nav>a[href="/partnership"]{background:#f58a321c;color:#b64d1f;border-radius:14px;font-weight:700}

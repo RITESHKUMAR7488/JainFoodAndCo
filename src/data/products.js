@@ -15,7 +15,10 @@ const catalog = `
 mp-sharbati-atta|MP Super Sharbati Atta|attas|Wheat|5 kg:290
 khapli-wheat-atta|Khapli Wheat Atta|attas|Wheat|1 kg:270
 black-wheat-atta|Black Wheat Atta|attas|Wheat|1 kg:160
-summer-multigrain-atta|Summer Multigrain Atta|attas|Multigrain|1 kg:120
+summer-multigrain-atta|Summer Edition|attas|Multigrain|1 kg:120
+winter-multigrain-atta|Winter Edition|attas|Multigrain|1 kg:
+chana-atta|Chana Atta|attas|Millet & Other Flours|1 kg:
+soya-atta|Soya Atta|attas|Millet & Other Flours|1 kg:
 jau-atta|Jau (Barley) Atta|attas|Millet & Other Flours|1 kg:85
 jowar-atta|Jowar Atta|attas|Millet & Other Flours|1 kg:85
 makka-atta|Makka Atta|attas|Millet & Other Flours|1 kg:75
@@ -120,13 +123,14 @@ karara|Karara|sweeteners|Traditional Sweeteners|500 g:55
 bura|Bura|sweeteners|Traditional Sweeteners|500 g:55
 `;
 
+const attaImageSources={'chana-atta':'besan-fine','soya-atta':'jowar-atta','winter-multigrain-atta':'summer-multigrain-atta'};
 export const packKey = label => label.toLowerCase().replace(/\s+/g,'-');
 export const products = catalog.trim().split('\n').map(row => {
  const [id,name,category,group,packList]=row.split('|');
  const cat=categories.find(c=>c.id===category);
  const sizes=(packList?packList.split(','):['Ask for sizes:']).map(pair=>{
   const [label,value]=pair.split(':');
-  return {label,price:value===''?null:Number(value),image:`/images/unbranded/${id}.${["daliya","pumpkin-seeds"].includes(id)?"webp":"png"}`,confirmedSize:label!=='Ask for sizes'};
+  return {label,price:value===''?null:Number(value),image:`/images/unbranded/${attaImageSources[id]||id}.${["daliya","pumpkin-seeds"].includes(id)?"webp":"png"}`,confirmedSize:label!=='Ask for sizes'};
  });
  return {id,name,category,group,categoryName:cat.name,isOriginal:!!cat.original,subheading:group,
   description:`Explore ${name.toLowerCase()} and more to discover across our collections. Contact our Noida store for availability and product details.`,
